@@ -1,0 +1,9 @@
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+  Name: <%= f.text_field :blog_content %><br />
+  <%= f.file_field :picture =>
+  
+  <%= image_Tag @post.picture.url %>
+
+  <br />
+  <%= f.submit %>
+<% end %>
