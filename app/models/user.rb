@@ -9,6 +9,8 @@ class User
   field :password_confirm, type: String
   field :bio, type: String
 
+has_and_belongs_to_many :users
+
 validates_presence_of :name, :username, :email, :password_digest
 validates_length_of :first_name, minimum: 2, maximum:20
 validates_length_of :last_name, minimum: 2, maximum:20

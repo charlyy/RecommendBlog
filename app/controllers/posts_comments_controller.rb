@@ -1,0 +1,2 @@
+class PostsCommentsController < ApplicationController
+end

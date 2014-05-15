@@ -1,0 +1,9 @@
+<%= form_for @comment, :html => { :multipart => true } do |f| %>
+  Name: <%= f.text_field :text_comment %><br />
+  <%= f.file_field :picture %>
+  
+  <%= image_Tag @comment.picture.url %>
+
+  <br />
+  <%= f.submit %>
+<% end %>

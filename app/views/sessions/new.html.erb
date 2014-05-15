@@ -1,0 +1,15 @@
+<h1>Login</h1>
+
+<%= form_for :session, :url => sessions_path do |f| %>
+  First Name: <%= f.text_field :first_name %>
+  Last Name: <%= f.text_field :last_name %>
+  Username: <%= f.text_field :username %>	
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password_digest %>
+  Confirm Password: <%= f.password_field :password_confirm %>
+  Bio: <%= f.text_field :bio %>
+
+  <%= f.submit "Login" %>
+<% end %>
+
+<%= params %>

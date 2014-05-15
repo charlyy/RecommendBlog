@@ -1,0 +1,12 @@
+<h1>All My Comments!</h1>
+<p>I've got <%= @comments.count %></p>
+
+<% @comments.each do |c| %>
+  <ul>
+    <li>
+      <%= link_to comment_path c do %>
+        <%= c.text_comment %>
+      <% end %>
+    </li>
+  </ul>
+<% end %>

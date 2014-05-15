@@ -1,0 +1,13 @@
+<h1><%= @post.name %></h1>
+
+
+
+<% @post.ingredients.each do |p| %>
+  <h1><%= p.headline %></h1>
+  <div class="blogpost">
+  	<%= p.blog_content %>
+  </div>
+<% end %>
+
+
+<%= link_to "Edit your post", edit_post_path(@post) %>
