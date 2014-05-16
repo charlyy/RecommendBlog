@@ -1,15 +1,13 @@
 <h1>Login</h1>
 
 <%= form_for :session, :url => sessions_path do |f| %>
-  First Name: <%= f.text_field :first_name %>
-  Last Name: <%= f.text_field :last_name %>
-  Username: <%= f.text_field :username %>	
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password_digest %>
-  Confirm Password: <%= f.password_field :password_confirm %>
-  Bio: <%= f.text_field :bio %>
+  First Name: <%= f.text_field :first_name %><br />
+  Last Name: <%= f.text_field :last_name %><br />
+  Username: <%= f.text_field :username %><br />
+  Email: <%= f.text_field :email %><br />
+  Password: <%= f.password_field :password_digest %><br />
+  Confirm Password: <%= f.password_field :password_confirm %><br />
+  Bio: <%= f.text_field :bio %><br />
 
   <%= f.submit "Login" %>
 <% end %>
-
-<%= params %>

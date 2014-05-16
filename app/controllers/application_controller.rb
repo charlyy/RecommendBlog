@@ -5,23 +5,23 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
 
 
-  def authenticate_user
-  	if !signed_in
-  		redirect_to new_sessions_path
-  	end
-  end
+  # def authenticate_user
+  # 	if !signed_in
+  # 		redirect_to new_sessions_path
+  # 	end
+  # end
 
 
-  def sign_in(user)
-  	# session is a key:value store 'hash', session is persisted overtime
-  	session[:remember_token] = user.id
-  	@current_user = user
-  end
+  # def sign_in(user)
+  # 	# session is a key:value store 'hash', session is persisted overtime
+  # 	session[:remember_token] = user.id
+  # 	@current_user = user
+  # end
 
-  def sign_out
-  session.delete(:remember_token)
-  @current_user = nil
-  end 
+  # def sign_out
+  # session.delete(:remember_token)
+  # @current_user = nil
+  # end 
 
 
 end
