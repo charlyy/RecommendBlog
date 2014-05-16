@@ -1,11 +1,12 @@
 <div class="signup_container">
-	<%= form_for @user do |f| %>
-			<%= f.label :first_name %><%= f.text_field :first_name %><br />
-			<%= f.label :last_name %><%= f.text_field :last_name %><br />
-			<%= f.label :username %><%= f.text_field :username %><br />
-			<%= f.label :email %><%= f.text_field :email %><br />
-			<%= f.label :password_digest %><%= f.text_field :password_digest %><br />
-			<%= f.label :password_confirm %><%= f.text_field :password_confirm %><br />
-			<%= f.label :bio %><%= f.text_field :bio %><br />
+	<%= bootstrap_form_for(@user) do |f| %>
+			<%= f.text_field :first_name %><br />
+			<%= f.text_field :last_name %><br />
+			<%= f.text_field :username, help: "Between 4-14 characters max."    %><br />
+			<%= f.text_field :email %><br />
+			<%= f.text_field :password, help: "Minimum 5 characters max."   %><br />
+			<%= f.text_field :password_confirm %><br />
+			<%= f.text_field :bio, help: "100 Characters max." %><br />
+			<%= f.submit %>
 	<% end %>
 </div>

@@ -6,14 +6,19 @@ class User
   field :username, type: String
   field :email, type: String
   field :password_digest, type: String
-  field :password_confirm, type: String
   field :bio, type: String
+
+attr_accessor :password_confirm
+
 
 has_and_belongs_to_many :users
 
-validates_presence_of :name, :username, :email, :password_digest
-validates_length_of :first_name, minimum: 2, maximum:20
-validates_length_of :last_name, minimum: 2, maximum:20
+validates_presence_of :first_name, :username, :email
+validates_length_of :first_name, minimum: 2 
+validates_length_of :last_name, minimum: 2
+# validates_length_of :password, minimum: 4
+# validates_length_of :password_confirm, minimum: 4
+validates_length_of :username, minimum: 4, maximum: 14
 validates_length_of :bio, maximum: 100
 validates_uniqueness_of :email, :username
 validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
@@ -35,6 +40,6 @@ def authenticate(test_password)
 		self
 	else
 		false
-	end
   end
+end
 end

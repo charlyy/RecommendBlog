@@ -10,6 +10,7 @@ gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 gem 'mongoid-paperclip', :require => 'mongoid_paperclip'
+gem 'aws-sdk'
 gem 'bootstrap_form'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
