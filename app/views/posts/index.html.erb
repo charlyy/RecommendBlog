@@ -1,12 +1,12 @@
 <div class ="posts_container">
-<h1>All My Posts!</h1>
+<h1>Recommend Something</h1>
 <p>I've got <%= @posts.count %> counts</p>
 
 <% @posts.each do |p| %>
   <ul>
     <li>
       <%= link_to post_path p do %>
-        <strong><%= p.blog_content %>'s burrito.  Don't touch!!!</strong>
+        <%= p.blog_content %>
         <% end %>
     </li>
   </ul>

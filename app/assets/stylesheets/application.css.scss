@@ -17,13 +17,26 @@
 
 @import "bootstrap";
 
-.posts_container{
-	margin: 60px auto 0;
+.nav{
+
+	background-color: darkgrey;
+
 }
 
 
-.login_container{
-	
+.posts_container, .postshow_container, .newpost_container, .welcome_container
+{
+	margin: 60px auto 0;
+}
+
+.newpost_container
+{
+	height: 450px;
+	width: 450px;
+}
+
+.login_container
+{
 	height: 450px;
 	width: 300px;
 	margin: 30px auto 0;
@@ -37,26 +50,23 @@
 {	
 	margin-left: 20px;
 
-	.header
-	{
-		margin: 80px auto;
-		font-family: 'Chewy', cursive;;
-	}
-	
-	.signup_container
-	{	
-		margin-top: -60px;
-		background-color: white;
-		padding: 20px;
-	}
+		.header
+		{
+			margin: 80px auto;
+			font-family: 'Chewy', cursive;;
+		}
+		
+		.signup_container
+		{	
+			margin-top: -60px;
+			background-color: white;
+			padding: 20px;
+		}
 }
 
 .welcome_container
 {
-	
 	font-family: 'Chewy', cursive;
-	margin: 60px auto 0px;
 	text-align: center;
 	font-size: 220px;
-
 }

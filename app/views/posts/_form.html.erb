@@ -1,8 +1,7 @@
 <%= bootstrap_form_for @post, :html => { :multipart => true } do |f| %>
-  Name: <%= f.text_field :blog_content %><br />
+  <%= f.text_field :headline %><br />
+  <%= f.text_field :blog_content %><br />
   <%= f.file_field :picture %>
-  
-  <%= image_tag @post.picture.url %>
 
   <br />
   <%= f.submit %>
