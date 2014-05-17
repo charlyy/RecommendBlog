@@ -4,13 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include ApplicationHelper
 
-
-  # def authenticate_user
-  # 	if !self.current_user
-  # 		redirect_to new_sessions_path
-  # 	end
-  # end
-
+def authenticate_user
+    if !current_user
+      redirect_to new_sessions_path
+    end
+  end
 
   # def sign_in(user)
   # 	# session is a key:value store 'hash', session is persisted overtime

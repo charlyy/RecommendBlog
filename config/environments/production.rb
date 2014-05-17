@@ -77,4 +77,12 @@ Rails.application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['charlyy'],
+    :access_key_id => ENV['AKIAJOB7EC5P3NX5AINA'],
+    :secret_access_key => ENV['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']
+  }
+}
 end

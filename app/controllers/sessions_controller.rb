@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   def new
   end
 
+ 
   def create
     @user = User.where(:email => params[:session][:email]).first
 
@@ -9,7 +10,7 @@ class SessionsController < ApplicationController
       flash[:error] = "Invalid email/password combination"
       render 'new'
     else
-      session[:remember_token] = @user.id
+      session[:remember_token] = @user.id.to_s
       @current_user = @user
       redirect_to root_path
     end

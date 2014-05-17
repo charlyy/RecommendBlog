@@ -1,17 +1,14 @@
+<div class ="posts_container">
 <h1>All My Posts!</h1>
-<p>I've got <%= @posts.count %></p>
+<p>I've got <%= @posts.count %> counts</p>
 
 <% @posts.each do |p| %>
   <ul>
     <li>
       <%= link_to post_path p do %>
-        <strong><%= p.body_content %>'s burrito.  Don't touch!!!</strong>
-      <% end %>
-      <ul>
-        <% b.ingredients.each do |i| %>
-          <li><%= i.name %></li>
+        <strong><%= p.blog_content %>'s burrito.  Don't touch!!!</strong>
         <% end %>
-      </ul>
     </li>
   </ul>
 <% end %>
+</div>

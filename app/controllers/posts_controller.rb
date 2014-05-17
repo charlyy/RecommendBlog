@@ -16,8 +16,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(params.require(:post).permit(:headline, :body_content => [], :picture))
-    redirect_to burritos_path
+    Post.create(params.require(:post).permit(:headline, :blog_content, :picture))
+    redirect_to posts_path
   end
 
   def edit
@@ -26,8 +26,8 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    if @post.update(params.require(:post).permit(:headline, :body_content => [], :picture))
-      redirect_to burritos_path
+    if @post.update(params.require(:post).permit(:headline, :blog_content, :picture))
+      redirect_to posts_path
     else
       render 'edit'
     end
@@ -35,5 +35,4 @@ class PostsController < ApplicationController
 
   def destroy
   end
-end
 end
