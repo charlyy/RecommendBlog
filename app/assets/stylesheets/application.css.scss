@@ -16,17 +16,21 @@
  */
 
 @import "bootstrap";
-
-.nav{
-
-	background-color: darkgrey;
-
+.nav, .navbar-brand, .login_container, .new_user_container, .welcome_container,
+.userindex_container
+{
+	font-family: 'Poiret One', cursive;
 }
 
-
-.posts_container, .postshow_container, .newpost_container, .welcome_container
+.posts_container, .postshow_container, .newpost_container, 
+.welcome_container, .userindex_container
 {
 	margin: 60px auto 0;
+}
+
+.posts_container ul li
+{
+	list-style-type: none;
 }
 
 .newpost_container
@@ -43,7 +47,6 @@
 	background-color: white;
 	padding: 30px;
 	text-align: center;
-	font-family: 'Chewy', cursive;;
 }
 
 .new_user_container
@@ -53,7 +56,6 @@
 		.header
 		{
 			margin: 80px auto;
-			font-family: 'Chewy', cursive;;
 		}
 		
 		.signup_container
@@ -66,7 +68,31 @@
 
 .welcome_container
 {
-	font-family: 'Chewy', cursive;
 	text-align: center;
 	font-size: 220px;
+}
+
+.postshow_container
+{
+	width: 500px;
+	height: 500px;
+	overflow: scroll;
+}
+
+.blogpost
+{
+	height: 200px;
+	width: 300px;
+	margin: 0 auto;
+}
+
+.blogpost h1
+{
+	text-align: center;
+}
+
+.blog_image img
+{
+	width: 100%;
+	height: auto;
 }

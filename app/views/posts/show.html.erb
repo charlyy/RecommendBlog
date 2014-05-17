@@ -1,8 +1,12 @@
 <div class="postshow_container">
-	<h1><%= @post.headline %></h1>
-    <div class="blogpost">
-  	<%= @post.blog_content %>
-  	<%= image_tag @post.picture.url %>
+	<div class="blogpost">
+		<h1><%= @post.headline %></h1>
+			<div class="blog_image">
+			  	<%= image_tag @post.picture.url %>
+			</div> 
+			  	<%= @post.blog_content %> <br /><br />
+		  	<%= link_to "Edit your post", edit_post_path(@post) %><br />
+		  	<%= link_to "View posts", posts_path %>
     </div>
-	<%= link_to "Edit your post", edit_post_path(@post) %>
+	
 </div>
