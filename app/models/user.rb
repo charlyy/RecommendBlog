@@ -12,8 +12,6 @@ attr_accessor :password_confirm
 
 
 has_and_belongs_to_many :users
-has_many :posts
-has_many :comments
 
 validates_presence_of :first_name, :username, :email
 validates_length_of :first_name, minimum: 2 

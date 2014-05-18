@@ -17,13 +17,13 @@
 
 @import "bootstrap";
 .nav, .navbar-brand, .login_container, .new_user_container, .welcome_container,
-.userindex_container
+.userindex_container, .usershow_container
 {
 	font-family: 'Poiret One', cursive;
 }
 
 .posts_container, .postshow_container, .newpost_container, 
-.welcome_container, .userindex_container
+.welcome_container, .userindex_container, .usershow_container
 {
 	margin: 60px auto 0;
 }

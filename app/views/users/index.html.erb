@@ -1,4 +1,15 @@
 <div class="userindex_container">
-<h1>User Index</h1>
-
+<h1>My Profile</h1> 
+<ul>
+	<% @user.each do |c| %>
+	<li>Name: <%= c.first_name %> <%= c.last_name %></li>
+	<li>Username: <%= c.username %></li>
+	<li>Email: <%= c.email %></li>
+</ul>
+<ul>
+	<li>Bio:</li>
+	<li><%= c.bio %></li>
+	<% end %>
+</ul>
+	
 </div>
