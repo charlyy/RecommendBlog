@@ -1,10 +1,10 @@
-<div class="userindex_container">
-<h1>My Profile</h1> 
+<div class="usershow_container">
+<h1><%= @user.first_name.capitalize %>'s Profile</h1> 
 <ul>
-	<li>Name: <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></li>
-	<li>Username: <%= @user.username %></li>
-	<li>Email: <%= @user.email %></li>
-	<li>Bio: <%= @user.bio %></li>
+	<li><strong>Name</strong>: <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></li>
+	<li><strong>Username</strong>: <%= @user.username %></li>
+	<li><strong>Email</strong>: <%= @user.email %></li>
+	<li><strong>Bio</strong>: <%= @user.bio %></li>
 </ul>
 	
 </div>
