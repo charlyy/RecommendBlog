@@ -4,13 +4,23 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+
+  def index
+    @users = User.all
+  end
+  
+  def show
+    @user = User.find(params[:id])
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "You have signed up successfully"
-      redirect_to users_path
+      redirect_to user_path(@user)
     else
-      render :new
+      flash[:destroy] = "There was an error in your request"
+      render 'new'
     end
   end
 

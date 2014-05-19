@@ -1,12 +1,43 @@
 <div class="postshow_container">
+	
 	<div class="blogpost">
 		<h1><%= @post.headline %></h1>
 			<div class="blog_image">
 			  	<%= image_tag @post.picture.url %>
-			</div> 
-			  	<%= @post.blog_content %> <br /><br />
-		  	<%= link_to "Edit your post", edit_post_path(@post) %><br />
-		  	<%= link_to "View posts", posts_path %>
-    </div>
+			</div>
+			<div class="blog_text"> 
+			  	<%= @post.blog_content %> 
+			</div>
+	</div> <!-- blogpost_container -->
 	
-</div>
+	<div class="crud_links_container">
+	    <div class="view_container">
+			  	<%= link_to "View posts", posts_path %>
+		</div>
+	    <div class="edit_container">  	
+			  	<%= link_to "Edit your post", edit_post_path(@post) %>
+		</div>
+		<div class="delete_container">  	
+			  	<%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+		</div>
+	</div>
+
+		<div class="post_comments">
+
+
+		</div>
+
+		<div class="comments_container">
+			<h3>Add Recommendation</h3>
+					<div class="comment_create">
+					<%= bootstrap_form_for [@post, Comment.new] do |f| %>
+			        	<p>
+			                <%= f.text_area :text_comment %>
+			        	</p>
+			        	<p><%= f.submit "Submit Rec" %></p>
+					<% end %>
+			</div><!-- comment_create-->
+		</div><!-- comments_container -->
+
+	
+</div><!-- postshow_container-->

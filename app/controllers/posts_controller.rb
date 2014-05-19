@@ -4,7 +4,6 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @comments = Comment.all
   end
 
   def show
@@ -16,9 +15,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(params.require(:post).permit(:headline, :blog_content, :picture))
-    redirect_to posts_path
+    @post = Post.new(params.require(:post).permit(:headline, :blog_content, :picture))
+    @post.user = current_user
+    if @post.save
+      redirect_to posts_path
+    else
+      render 'new'
   end
+end
+
 
   def edit
     @post = Post.find(params[:id])
@@ -34,5 +39,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post = Post.find(params[:id])
+    if (@post.user == current_user)
+      @post.destroy
+      redirect_to posts_path
+    else
+      redirect_to posts_path
   end
+end
 end

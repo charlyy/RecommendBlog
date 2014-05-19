@@ -1,13 +1,12 @@
 <div class ="posts_container">
 <h1>Recommend Something</h1>
 <p>There are <%= @posts.count %> posts that need recommendations</p>
-
 <% @posts.each do |p| %>
   <ul>
     <li>
       <%= link_to post_path p do %>
-      	<%= @post.user.username %> posted: <%= p.blog_content %>
-        <% end %>
+        <strong><%= p.headline %></strong>
+      <% end %>
     </li>
   </ul>
 <% end %>
