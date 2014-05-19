@@ -11,6 +11,7 @@ class User
 attr_accessor :password_confirm
 
 
+
 has_and_belongs_to_many :users
 
 validates_presence_of :first_name, :username, :email, :password
@@ -23,7 +24,6 @@ validates_length_of :bio, maximum: 100
 validates_uniqueness_of :email, :username
 validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 validates_confirmation_of :password
-
 
 def password
 	@password

@@ -1,11 +1,15 @@
 <div class ="posts_container">
 <h1>Recommend Something</h1>
-<p>There are <%= @posts.count %> posts that need recommendations</p>
+<h4><%= pluralize(@posts.count, "post") %> need recommendations</h4>
 <% @posts.each do |p| %>
   <ul>
     <li>
       <%= link_to post_path p do %>
-        <strong><%= p.headline %></strong>
+        <strong>
+	        <span class="headline_posts">
+	        	<%= p.headline %>
+	        </span>
+        </strong>
       <% end %>
     </li>
   </ul>

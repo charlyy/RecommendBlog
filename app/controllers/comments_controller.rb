@@ -1,42 +1,20 @@
 class CommentsController < ApplicationController
 
-  before_action :authenticate_user
-  before_action :postsfind, only: [:index, :create, :new]
-
-  def new
-    @comment = Comment.new
-  end
-
-
-  def show
-    @comment = Comment.find(params[:id])
-  end
+  before_action :authenticate_user, :postsfind
+  before_action :set_comment, only: [:index, :create, :new]
 
 
   def create
-    @comment = current_user.Comment.new(params.require(:comment).permit(:text_comment))
-    @comment.post = @post
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build(comment_params)
     @comment.user = current_user
       if @comment.save
-        redirect_to comment_path(@post)
+        flash[:notice] = 'Comment was successfully created.'
+        redirect_to post_path(@post)
       else
         render post_path(@comment.post_id)
   end
 end
-  # def edit
-  #   @comment = Comment.find(params[:id])
-  #   if (@post.user == current_user)
-  #     @comment.
-  # end
-
-  # def update
-  #   @comment = Comment.find(params[:id])
-  #   if @comment.update(params.require(:comment).permit(:text_comment))
-  #     redirect_to comments_path
-  #   else
-  #     render 'edit'
-  #   end
-  # end
 
   def destroy
       @comment = Comment.find(params[:id])
@@ -50,10 +28,19 @@ end
 
 
 private
+  def set_comment
+      @comment = @post.comments.find(params[:id])
+    end
+
+    def comment_params
+      params.require(:comment).permit(:text_comment)
+    end
+
   def postsfind
     @post = Post.find(params[:post_id])
+  end
+
   
-end
 
 end
 
