@@ -11,30 +11,41 @@
 	</div> <!-- blogpost_container -->
 	
 	<div class="crud_links_container">
+
 	    <div class="view_container">
-			  	<%= link_to "View posts", posts_path %>
+			 <%= link_to "View posts", posts_path %>
 		</div>
+		<% if (current_user == @post.user) %>
 	    <div class="edit_container">  	
 			  	<%= link_to "Edit your post", edit_post_path(@post) %>
 		</div>
+
 		<div class="delete_container">  	
 			  	<%= link_to 'Delete Post', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
 		</div>
+		<% end %>
 	</div>
 
-		<!-- <div class="post_comments">
+		<div class="post_comments">
 			<h3>Comments</h3>
-			  <div class="blogcomments"> -->
-			  	<%# @posts.each do |p| %>
-			  	 <%#= render :partial => p.comments %>
-			  	 <%# end %>
-			  <!-- </div>
-		</div> -->
+			  <div class="blogcomments"> 
+			  	<% @post.comments.each do |c| %>
+			  	  <p>
+
+                <strong>
+                      <%= c.user %> Posted <%= c.created_at %> ago
+                </strong>
+                <br/>
+                <%= c.text_comment %>
+        </p>
+			  	 <% end %>
+			  </div>
+		</div> 
 
 		<div class="comments_container">
 			<h3>Add Recommendation</h3>
 					<div class="comment_create">
-					<%= bootstrap_form_for [@post, Comment.new] do |f| %>
+					<%= bootstrap_form_for [@post, @comment] do |f| %>
 			        	<p>
 			                <%= f.text_area :text_comment %>
 			        	</p>
@@ -42,6 +53,4 @@
 					<% end %>
 			</div><!-- comment_create-->
 		</div><!-- comments_container -->
-
-	
 </div><!-- postshow_container-->

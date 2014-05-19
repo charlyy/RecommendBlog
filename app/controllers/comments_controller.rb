@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
 
   before_action :authenticate_user, :postsfind
-  before_action :set_comment, only: [:index, :create, :new]
+  before_action :set_comment, only: [:index, :new]
 
 
   def create
     @post = Post.find(params[:post_id])
-    @comment = @post.comments.build(comment_params)
+    @comment = @post.comments.new(comment_params)
     @comment.user = current_user
       if @comment.save
         flash[:notice] = 'Comment was successfully created.'
