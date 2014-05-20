@@ -1,4 +1,4 @@
-<%= bootstrap_form_for @post, :html => { :multipart => true } do |f| %>
+<%= bootstrap_form_for @post do |f| %>
   <%= f.text_field :headline %><br />
   <%= f.text_field :blog_content %><br />
   <%= f.file_field :picture %>

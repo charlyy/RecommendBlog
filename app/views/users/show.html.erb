@@ -1,12 +1,18 @@
 <div class="usershow_container">
 <h1><%= @user.first_name.capitalize %>'s Profile</h1> 
 
-
+<div class="profile_pic">
+	<%= image_tag @user.profile_picture.url %>
+</div>
 <ul>
 	<li><span class="userinfo">Name</span>: <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %></li>
 	<li><span class="userinfo">Username</span>: <%= @user.username %></li>
 	<li><span class="userinfo">Email</span>: <%= @user.email %></li>
 	<li><span class="userinfo">Bio</span>: <%= @user.bio %></li>
 </ul>
-	
+
 </div>
+
+<footer>
+Copyright 2014 | Charly Yoon | All rights reserved.
+</footer>

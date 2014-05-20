@@ -1,5 +1,5 @@
 <div class="signup_container">
-	<%= bootstrap_form_for @user, :html => { :multipart => true } do |f| %>
+	<%= bootstrap_form_for @user do |f| %>
 			<%= f.text_field :first_name %><br />
 			<%= f.text_field :last_name %><br />
 			<%= f.text_field :username, help: "Between 4-14 characters max."    %><br />
@@ -7,7 +7,7 @@
 			<%= f.password_field :password, help: "Minimum 5 characters max."   %><br />
 			<%= f.password_field :password_confirm %><br />
 			<%= f.text_field :bio, help: "100 Characters max." %><br />
-
+			<%= f.file_field :picture %><br />	
 			<%= f.submit %>
 	<% end %>
 </div>

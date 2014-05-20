@@ -1,12 +1,15 @@
 require "bcrypt"
 class User
   include Mongoid::Document
+  include Mongoid::Paperclip
   field :first_name, type: String
   field :last_name, type: String
   field :username, type: String
   field :email, type: String
   field :password_digest, type: String
   field :bio, type: String
+  field :profile_picture
+
 
 attr_accessor :password_confirm
 
@@ -24,6 +27,8 @@ validates_length_of :bio, maximum: 100
 validates_uniqueness_of :email, :username
 validates_format_of :email, with: /\A[\w]([^@\s,;]+)@(([\w-]+\.)+(com|edu|org|net|gov|mil|biz|info))\z/i
 validates_confirmation_of :password
+has_mongoid_attached_file :profile_picture 
+validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
 
 def password
 	@password
