@@ -17,7 +17,7 @@
 
 @import "bootstrap";
 .nav, .navbar-brand, .login_container, .new_user_container, .welcome_container,
-.userindex_container, .usershow_container, .signup_container 
+.userindex_container, .usershow_container, .signup_container, .post_comments
 {
 	font-family: 'Poiret One', cursive;
 }
@@ -129,7 +129,7 @@
 {
 	padding-top: 15px;
 	width: 540px;
-	height: 600px;
+	height: 560px;
 	overflow: scroll;
 	border: 20px solid black;
 	padding-left: 20px;
