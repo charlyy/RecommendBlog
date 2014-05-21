@@ -32,14 +32,9 @@
 			  	<% @post.comments.each do |c| %>
 			  	<p>
                 <strong>
-                <% if c.created_at == true %>
-                     <%= c.user %> Posted <%= c.created_at %> ago 
-                <% end %>
+                <%= c.user %> Posted <%= c.created_at %> ago 
                 </strong> <br/> <br />
                 <%= c.text_comment %> 
-               	
-                
-
        			 </p>
 			  	<% end %>
 			  </div>
