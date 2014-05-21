@@ -17,13 +17,13 @@
 
 @import "bootstrap";
 .nav, .navbar-brand, .login_container, .new_user_container, .welcome_container,
-.userindex_container, .usershow_container
+.userindex_container, .usershow_container, .signup_container 
 {
 	font-family: 'Poiret One', cursive;
 }
 
-.posts_container, .postshow_container, .newpost_container, 
- .userindex_container, .usershow_container
+.posts_container, .newpost_container, 
+ .userindex_container, .usershow_container, .new_user_container
 {
 	margin: 60px auto 0;
 }
@@ -66,6 +66,7 @@
 {
 	text-decoration: none;
 }
+
 .headline_posts
 {
 	font-size: 24px;
@@ -77,6 +78,18 @@
 	height: 450px;
 	width: 450px;
 }
+
+.signup_container 
+{
+	height: 570px;
+	width: 450px;
+	overflow: scroll;
+}
+
+.newheader {
+	margin: 65px auto;
+}
+
 
 .login_container
 {
@@ -114,11 +127,15 @@
 
 .postshow_container
 {
+	padding-top: 15px;
 	width: 540px;
+	height: 630px;
+	overflow: scroll;
 	border: 20px solid black;
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius: 25px;
+	margin: 70px auto 0;
 }
 
 .comments_container 
@@ -163,6 +180,7 @@
 	margin: 0 auto;
 	width: 460px;
 	height: auto;
+	border: 1px solid black;
 }
 
 .blog_text

@@ -30,15 +30,18 @@
 			<h3>Comments</h3>
 			  <div class="blogcomments"> 
 			  	<% @post.comments.each do |c| %>
-			  	  <p>
-
+			  	<p>
                 <strong>
-                      <%= c.user %> Posted <%= c.created_at %> ago <br />
-                </strong>
-                <br/>
-                <%= c.text_comment %>
-        </p>
-			  	 <% end %>
+                <% if c.created_at == true %>
+                     <%= c.user %> Posted <%= c.created_at %> ago 
+                <% end %>
+                </strong> <br/> <br />
+                <%= c.text_comment %> 
+               	
+                
+
+       			 </p>
+			  	<% end %>
 			  </div>
 		</div> 
 
