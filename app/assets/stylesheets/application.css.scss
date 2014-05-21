@@ -55,6 +55,8 @@
 .posts_container 
 {
 	text-align: center;
+	height: 500px;
+	overflow: scroll;
 }
 
 .posts_container ul li
@@ -104,6 +106,8 @@
 .new_user_container
 {	
 	margin-left: 20px;
+	height: 500px;
+	overflow: scroll;
 
 		.header
 		{
@@ -129,13 +133,32 @@
 {
 	padding-top: 15px;
 	width: 540px;
-	height: 560px;
+	height: 540px;
 	overflow: scroll;
 	border: 20px solid black;
 	padding-left: 20px;
 	padding-right: 20px;
 	border-radius: 25px;
 	margin: 70px auto 0;
+}
+
+.headline_posts 
+{
+	color: blue;
+	background-color: #94D3B5;
+	border: 2px double black;
+	border-radius: 15px;
+	padding: 5px;
+	overflow: scroll;
+}
+
+.headline_posts a:hover {
+	color: #8A5CE6;
+	font-size: 30px;
+}
+
+.headline_posts a:link {
+	color: black;
 }
 
 .comments_container 

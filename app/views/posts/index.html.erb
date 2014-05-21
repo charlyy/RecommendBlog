@@ -4,13 +4,14 @@
 <% @posts.each do |p| %>
   <ul>
     <li>
+    <div class="headline_posts">
       <%= link_to post_path p do %>
         <strong>
-	        <span class="headline_posts">
-	        	<%= p.headline %> <br /> 
-	        </span>
-        </strong>
-      <% end %>
+	        	<%= p.headline %>
+            <% end %> <br /> 
+        </strong>  
+    </div>
+      
     </li>
   </ul>
 <% end %>

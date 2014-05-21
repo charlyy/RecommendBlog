@@ -11,10 +11,13 @@
 	</div> <!-- blogpost_container -->
 	
 	<div class="crud_links_container">
-
+	<div class="userlink">
+			 <%#= link_to @post.user, user_path(@user) %>
+		</div>
 	    <div class="view_container">
 			 <%= link_to "View posts", posts_path %>
 		</div>
+
 		<% if (current_user == @post.user) %>
 	    <div class="edit_container">  	
 			  	<%= link_to "Edit your post", edit_post_path(@post) %>
@@ -32,7 +35,7 @@
 			  	<% @post.comments.each do |c| %>
 			  	<p>
                 <strong>
-                <%= c.user %> Posted <%= c.created_at %> ago 
+                <%= c.user %> Posted <%= c.created_at %> ago. 
                 </strong> <br/> <br />
                 <%= c.text_comment %> 
        			 </p>
